@@ -3,8 +3,7 @@ StarWarsProject101
 
 This is my CSIT505 project. I am using the Star Wars script from Episode V. I obtained this script from Kaggle.
 
-Refer to the link below:
-https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scripts?select=SW_EpisodeV.txt
+Refer to the link: https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scripts?select=SW_EpisodeV.txt
 
 This program will turn the unstructured data into structured data. By utilizing the line number, character name and dialogue, important information can be retrieved. Finding the character that talks the most, meaning that they have the most script lines in this episode. Creating a bar chart of the characters, comparing the number of script lines between each character.
 
