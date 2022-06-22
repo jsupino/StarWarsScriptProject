@@ -9,7 +9,7 @@ from collections import Counter
 
 
 #download necessary files (downloaded most popular)
-# nltk.download()
+nltk.download()
 
 
 #create a list: separated by each line: line number, character name, and dialogue
@@ -26,16 +26,20 @@ with open("C:/Users/supin/Desktop/starwars/SW_EpisodeV.txt", "r") as text:
             "name": name,
             "dialogue": dialogue
         }
-        sw_dic.append(new_obj)
+        sw_dic.append(new_obj)    
 # print(sw_dic)
+
 
 #create a numpy.ndarray of all names
 arr = np.array(sw_dic)
+
 #create a list of all names
 name_column = [row['name'] for row in arr]
+
 #turn the list into a dictionary of how many lines each character has
 name_freq = dict(Counter(name_column))
 print(name_freq)
+
 
 #function to find the character that speaks the most frequent
 def most_frequent(name_column):
@@ -50,10 +54,11 @@ def most_frequent(name_column):
 #print the character with the most lines
 print("The most active character in this episode is: ",most_frequent(name_column))
 
+
 #create a list of the top three characters that speak the most
 top_char = Counter(name_column)
 top_three = top_char.most_common(3)
-print(type(top_three))
+# print(top_three)
 
 #convert the list into a dictionary of top three characters
 top_three_dic = dict(top_three)
@@ -61,11 +66,11 @@ print(top_three_dic)
 
 #only the dictionary keys (top 3 character names)
 top_three_keys = top_three_dic.keys()
-print(top_three_keys)
+# print(top_three_keys)
 
 #only the dictionary values (how many lines each character has)
 top_three_values = top_three_dic.values()
-print(top_three_values)
+# print(top_three_values)
 
 #create a pie chart of the top 3 most active characters
 mycolors = ["orange", "magenta", "cyan"]
@@ -75,8 +80,6 @@ plt.pie(top_three_values, labels = top_three_keys, autopct='%1.1f%%', shadow = T
 plt.title("Top 3 Most Active Characters")
 plt.legend(title = "Character")
 plt.show()
-
-
 
 
 #only the dictionary keys (character names)
@@ -98,8 +101,6 @@ plt.xticks(fontsize= 6)
 plt.ylabel('Frequency')
 plt.yticks(fontsize = 8)
 plt.show()
-
-
 
 
 #create a numpy.ndarray of the dialogue
@@ -126,7 +127,7 @@ no_punc_lines = no_punc_lines
 
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-# nltk.download('stopwords')
+nltk.download('stopwords')
 
 #remove stop words from the dialogue
 stopWords = set(stopwords.words('english'))
@@ -144,7 +145,7 @@ common_words = Count_no.most_common(20)
 
 #Turn the list into a dictionary of the 20 most common words
 common_words_dic = dict(common_words)
-# print(common_words_dic)
+print(common_words_dic)
 
 #only the dictionary keys (words)
 most_freq_words_used = common_words_dic.keys()
