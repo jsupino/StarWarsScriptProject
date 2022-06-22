@@ -6,7 +6,9 @@ Refer to the link: https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scr
 
 This program will turn the unstructured script into a structured and organized script. By using the line number, character name, and dialogue, important information can be retrieved. 
 
-        Refer to the StarWars_Dataset.ipynb to view the entire structured dataset used for this project.
+        Refer to the StarWars_Dataset.ipynb to view the entire structured dataset.
+        
+        Refer to the StarWars_Project.ipynb for the Jupyter Notebook of the project.
 
 Some important goals of this project:
 - Create a dictionary of all character names and the number of script lines they have.
