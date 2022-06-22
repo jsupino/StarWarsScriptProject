@@ -52,7 +52,7 @@ Create a numpy.ndarray of all the character names in the episode. These names wi
 Define a function to find the character that speaks the most frequent, meaning they have the most lines in this episode and they are the most active.
 
 Find the top 3 most active characters using the numpy.ndarray created for the names of the characters. Using Counter, the number of lines the top three character speaks will be stored in a list. This list is converted into a dictionary. Splitting the dictionary into keys and values, a pie chart can be created comparing the top 3 most active characters.
-- Title of chart is "Top 3 Most Active Characters"
+- Title of pie chart: "Top 3 Most Active Characters"
 - Colors: Orange, Magenta, and Cyan
 - Labels: Character names
 - Add percentage values
@@ -63,7 +63,12 @@ Find the top 3 most active characters using the numpy.ndarray created for the na
 
 Split the dictionary that contains all character names and number of lines they have in the script into the keys and values. The keys are the character names and the values are the number of lines they have in the script.
 
-Using the keys and values, create a bar chart to compare the number of times each character speaks. The title of this bar chart is "Character Lines in SW Episode V". Using matplotlib, the character names (x-axis) and frequency (y-axis) will be plotted and can easily be analyzed. Due to the length of some of the character names, the x-axis tick marks (the character names) were rotated vertically and made a size 6 font for better readability. After adjusting the x-axis characer names, the x-axis title (Characters) was pushed down out of view, but by setting the labelpad to -10, the title is more easily readable. The y-axis is set to a font size of 8 for a more organized look.
+Using the keys and values, create a bar chart to compare the number of times each character speaks. Using matplotlib, the character names (x-axis) and frequency (y-axis) will be plotted and can easily be analyzed.
+- Title of bar chart: "Character Lines in SW Episode V".
+- Rotate x-axis tick marks (character names) vertically, due to the length
+- Change x-axis font size to 6 for better readability (reduces overlapping of names)
+- Set labelpad to -10: after adjusting the x-axis characer names, the x-axis title (Characters) was pushed down out of view, but by adjusting the labelpad, the title is more easily readable.
+- Change y-axis font size to 8 for a more organized look.
 
 
 Create a numpy.array of all the dialogue spoken throughout this episode. The dialogue will be stored in a list. Using this list, remove all punctuation. First, to import string, removing all punctuation from the outside. Then, the rest of the punctuation must be removed.
