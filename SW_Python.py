@@ -1,30 +1,21 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
+#import required:
 import numpy as np
 
-
-# In[2]:
-
+import nltk
 
 import matplotlib.pyplot as plt
-
-
-# In[3]:
-
 
 from collections import Counter
 
 
-# In[4]:
+#download necessary files (downloaded most popular)
+# nltk.download()
 
 
+#create a list: separated by each line: line number, character name, and dialogue
 sw_dic = []
 with open("C:/Users/supin/Desktop/starwars/SW_EpisodeV.txt", "r") as text:
-    text = text.readlines()[1:]  #skip first line
+    text = text.readlines()[1:]  #skip first line in file
     for line in text:
         line = line.lower().split('"') #lowercase all words and split by quotes
         dialogue = line.pop(5)
@@ -36,30 +27,17 @@ with open("C:/Users/supin/Desktop/starwars/SW_EpisodeV.txt", "r") as text:
             "dialogue": dialogue
         }
         sw_dic.append(new_obj)
-#print out each line separately by line number, character name, and dialogue
-print(sw_dic)
+# print(sw_dic)
 
-
-# In[24]:
-
-
+#create a numpy.ndarray of all names
 arr = np.array(sw_dic)
+#create a list of all names
 name_column = [row['name'] for row in arr]
-#print out all character names
-print(name_column)
+#turn the list into a dictionary of how many lines each character has
+name_freq = dict(Counter(name_column))
+print(name_freq)
 
-
-# In[25]:
-
-
-#print out how many times each character speaks
-c = dict(Counter(name_column))
-print(c)
-
-
-# In[26]:
-
-
+#function to find the character that speaks the most frequent
 def most_frequent(name_column):
     counter = 0
     num = name_column[0]
@@ -69,46 +47,94 @@ def most_frequent(name_column):
             counter = freq
             num = i
     return num
-c = dict(Counter(name_column))
+#print the character with the most lines
+print("The most active character in this episode is: ",most_frequent(name_column))
 
-# #print the most frequent character
-print("The character with the most lines in this episode is:",most_frequent(name_column))
+#only the dictionary keys (character names)
+char_name_dic = name_freq.keys()
+# print(char_name_dic)
 
+#only the dictionary values (how many lines each character has)
+freq_dic = name_freq.values()
+# print(freq_dic)
 
-# In[27]:
-
-
-#print only the character names
-d = c.keys()
-print(d)
-
-
-# In[28]:
-
-
-# #print only the values of how many times each character speaks
-e = c.values()
-print(e)
-
-
-# In[29]:
-
-
-#create a bar chart
-Character = d
-Frequency = e
-
-plt.bar(Character, Frequency)
-plt.title('Frequency of Character Lines in SW Episode V')
-plt.xlabel('Character')
-plt.xticks(rotation = 90)
-plt.xticks(fontsize= 7.5)
+#create a bar chart comparing characters and the number of lines they have
+Character = char_name_dic 
+Frequency = freq_dic 
+plt.bar(Character, Frequency, color=['purple'])
+plt.title('Character Lines in SW Episode V')
+plt.xlabel('Character', labelpad= -10)
+plt.xticks(rotation = 'vertical')
+plt.xticks(fontsize= 6)
 plt.ylabel('Frequency')
+plt.yticks(fontsize = 8)
 plt.show()
 
 
-# In[ ]:
 
 
+#create a numpy.ndarray of the dialogue
+dialogue_arr = np.array(sw_dic)
+#turn it into a list of the dialogue
+char_lines = [row['dialogue'] for row in dialogue_arr]
+# print(char_lines)
+
+#remove punctuation
+import string
+excluded = set(string.punctuation)
+char_lines = ' '.join(ch for ch in char_lines if ch not in excluded)
+# print(char_lines)
+
+#remove the rest of the punctuation
+punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+no_punc_lines = " "
+for char_punc in char_lines:
+    if char_punc not in punc:
+        no_punc_lines = no_punc_lines + char_punc
+no_punc_lines = no_punc_lines
+# print(no_punc_lines)
+
+
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+# nltk.download('stopwords')
+
+#remove stop words from the dialogue
+stopWords = set(stopwords.words('english'))
+words = word_tokenize(no_punc_lines)
+filtered_dialogue = []
+for w in words:
+    if w not in stopWords:
+        filtered_dialogue.append(w)
+# print(filtered_dialogue)
+
+#create a list of the 20 most common words used throughout the episode
+Count_no = Counter(filtered_dialogue)
+common_words = Count_no.most_common(20)
+# print(common_words)
+
+#Turn the list into a dictionary of the 20 most common words
+common_words_dic = dict(common_words)
+# print(common_words_dic)
+
+#only the dictionary keys (words)
+most_freq_words_used = common_words_dic.keys()
+# print(most_freq_words_used)
+
+#only the dictionary values (how often the word occurs)
+most_freq_words_used_values = common_words_dic.values()
+# print(most_freq_words_used_values)
+
+#create a bar chart comparing 20 most common words and how often they occur
+Word = most_freq_words_used
+Word_Frequency = most_freq_words_used_values
+plt.bar(Word, Word_Frequency, color=['orange'])
+plt.title('Twenty Most Common Words Spoken in SW Episode V')
+plt.xlabel('Word', labelpad= -4)
+plt.xticks(rotation = 75)
+plt.xticks(fontsize= 8)
+plt.ylabel('Frequency')
+plt.yticks(fontsize = 10)
+plt.show()
 
 
