@@ -6,6 +6,8 @@ Refer to the link: https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scr
 
 This program will turn the unstructured data into structured data. By utilizing the line number, character name and dialogue, important information can be retrieved. Finding the character that talks the most, meaning that they have the most script lines in this episode. Creating a bar chart of the characters, comparing the number of script lines between each character.
 
+        Refer to the StarWars_Dataset.ipynb to view the entire structured dataset used for this project.
+
 Install required packages:
 
     pip install numpy
