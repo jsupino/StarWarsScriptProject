@@ -4,9 +4,21 @@ This is my CSIT505 Python project. I am using the Star Wars script from Episode 
 
 Refer to the link: https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scripts?select=SW_EpisodeV.txt
 
-This program will turn the unstructured data into structured data. By utilizing the line number, character name and dialogue, important information can be retrieved. Finding the character that talks the most, meaning that they have the most script lines in this episode. Creating a bar chart of the characters, comparing the number of script lines between each character.
+This program will turn the unstructured script into a structured and organized script. By using the line number, character name, and dialogue, important information can be retrieved. 
 
         Refer to the StarWars_Dataset.ipynb to view the entire structured dataset used for this project.
+
+Some important goals of this project:
+- Find the most active character (the character that speaks the most/has the most lines in this episode).
+- Create a dictionary of all character names and the number of script lines they have.
+- Create a bar chart comparing the characters and the number of script lines each character has.
+
+- Create a dictionary of the 20 most common words spoken throughout this episode.
+- Create a bar chart comparing the 20 most common words and how many times each was spoken.
+
+- Create an interactive Python file. The user will download the Star Wars Episode V file off of Kaggle. The program will ask the user to input the file name. Then the program will ask the user to input a character name. Whichever character name is inputted, the user will retreieve all the lines for that specific character.
+
+      Follow the instructions on the Interactive_SW.py file.
 
 Install required packages:
 
