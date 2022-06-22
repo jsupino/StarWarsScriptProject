@@ -18,7 +18,7 @@ Some important goals of this project:
 
 - Create an interactive Python file. The user will download the Star Wars Episode V file off of Kaggle. The program will ask the user to input the file name. Then the program will ask the user to input a character name. Whichever character name is inputted, the user will retreieve all the lines for that specific character.
 
-      Follow the instructions on the Interactive_SW.py file.
+      Follow the instructions on the Interactive Star Wars.py file.
 
 Install required packages:
 
