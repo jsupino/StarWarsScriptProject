@@ -125,8 +125,12 @@ no_punc_lines = no_punc_lines
 # print(no_punc_lines)
 
 
+
+#import necessary from nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+
+#if needed: download stopwords from nltk
 nltk.download('stopwords')
 
 #remove stop words from the dialogue
