@@ -10,7 +10,7 @@ This program will turn the unstructured script into a structured and organized d
         
         Refer to the StarWars_Project.ipynb for the Jupyter Notebook of the project.
 
-Some important goals of this project:
+Important goals of this project:
 - Create a dictionary of all character names and the number of script lines they have.
 - Find the most active character (the character that speaks the most/has the most lines in this episode).
 - Find the top three most active characters.
@@ -97,3 +97,7 @@ Using the keys and values, creatae a bar chart comparing the 20 most commmon wor
 - Change x-axis font size to 8 for better readability
 - Set labelpad to -4 so that the x-axis label is in view
 - Change the y-axis font size to 10 for a more organized look
+
+
+References:
+Xavier. “Star Wars Movie Scripts.” Kaggle, 7 May 2018, https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scripts?select=SW_EpisodeV.txt
