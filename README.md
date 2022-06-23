@@ -9,6 +9,8 @@ This program will turn the unstructured script into a structured and organized d
         Refer to the StarWars_Dataset.ipynb to view the entire structured printed out dataset.
         
         Refer to the StarWars_Project.ipynb for the Jupyter Notebook of the project.
+        
+        Refer to the StarWars_SourceCode.py for the source code in Python.
 
 Important goals of this project:
 - Create a dictionary of all character names and the number of script lines they have.
