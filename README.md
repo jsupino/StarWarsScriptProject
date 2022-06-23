@@ -4,9 +4,9 @@ This is my CSIT505 Python project. I am using the Star Wars script from Episode 
 
 Refer to the link: https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scripts?select=SW_EpisodeV.txt
 
-This program will turn the unstructured script into a structured and organized script. By using the line number, character name, and dialogue, important information can be retrieved. 
+This program will turn the unstructured script into a structured and organized dataset. By using the line number, character name, and dialogue, important information can be retrieved. 
 
-        Refer to the StarWars_Dataset.ipynb to view the entire structured dataset.
+        Refer to the StarWars_Dataset.ipynb to view the entire structured printed out dataset.
         
         Refer to the StarWars_Project.ipynb for the Jupyter Notebook of the project.
 
@@ -23,7 +23,9 @@ Some important goals of this project:
 - Create an interactive Python file. The user will download the Star Wars Episode V file off of Kaggle. The program will ask the user to input the file name. Then the program will ask the user to input a character name. Whichever character name is inputted, the user will retreieve all the lines for that specific character.
 
       Follow the instructions on the Interactive Star Wars.py file.
+      
 
+What was done:
 Install required packages:
 
     pip install numpy
@@ -47,7 +49,7 @@ Download necessary files from the National Language Toolkit (nltk): (downloaded 
         nltk.download()
 
 
-When the file opens, the first line is skipped, as this line is not necessay for analysis. All letters in the file will be lowercased and then split. Each line will be organized by line number, character name, and dialogue, and stored in a dictionary. This dictionary will then be stored in a list. 
+When the file opens, the first line is skipped, as this line is not necessay for analysis. All letters in the file will be lowercased and each line in the script will be split. Each line will be organized by line number, character name, and dialogue, and stored in a dictionary. This dictionary will then be stored in a list. 
 
 Create a numpy.ndarray of all the character names in the episode. These names will be stored in a list. Using Counter from collections, the number of lines each character speaks throughout the episode is stored in a dictionary.
 
