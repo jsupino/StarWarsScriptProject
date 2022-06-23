@@ -43,10 +43,18 @@ Import required:
     from collections import Counter
   
     import matplotlib.pyplot as plt
+    
+    from nltk.tokenize import word_tokenize
+    from nltk.corpus import stopwords
  
 Download necessary files from the National Language Toolkit (nltk): (downloaded most popular)
 
         nltk.download()
+
+If needed, download the stopwords from the Natual Language ToolKit
+
+        nltk.download('stopwords')
+
 
 
 When the file opens, the first line is skipped, as this line is not necessay for analysis. All letters in the file will be lowercased and each line in the script will be split. Each line will be organized by line number, character name, and dialogue, and stored in a dictionary. This dictionary will then be stored in a list. 
@@ -55,7 +63,9 @@ Create a numpy.ndarray of all the character names in the episode. These names wi
 
 Define a function to find the character that speaks the most frequent, meaning they have the most lines in this episode and they are the most active.
 
-Find the top 3 most active characters using the numpy.ndarray created for the names of the characters. Using Counter, the number of lines the top three character speaks will be stored in a list. This list is converted into a dictionary. Splitting the dictionary into keys and values, a pie chart can be created comparing the top 3 most active characters.
+Find the top 3 most active characters using the numpy.ndarray created for the names of the characters. Using Counter, the number of lines the top three character speaks will be stored in a list. This list is converted into a dictionary.
+
+Splitting the dictionary into keys and values, use matplotlib to create a pie chart can be created comparing the top 3 most active characters.
 - Title of pie chart: "Top 3 Most Active Characters"
 - Colors: Orange, Magenta, and Cyan
 - Labels: Character names
@@ -77,18 +87,13 @@ Using the keys and values, create a bar chart to compare the number of times eac
 
 Create a numpy.array of all the dialogue spoken throughout this episode. The dialogue will be stored in a list. Using this list, remove all punctuation. First, to import string, removing all punctuation from the outside. Then, the rest of the punctuation must be removed.
 
-
-After removing all punctuation, remove all stopwords from the list. These stopwords are words that do not add much meaning to this analysis.
-
-    from nltk.tokenize import word_tokenize
-    from nltk.corpus import stopwords
-
-If needed, download the stopwords from the Natual Language ToolKit
-
-    nltk.download('stopwords')
-
-Then all stopwords will be removed from the dialgoue, storing the result in a list.
+After removing all punctuation, remove all stopwords from the list. These stopwords are words that do not add much meaning to this analysis. After removing all stopwords from the dialgoue, the result will be stored in a list.
 
 Create a list of the 20 most common words used throughout the episode using Counter. Convert the list into a dictionary to retreieve the keys and values. The keys are the words and the values are how often the word occurs. 
 
-Using the keys and values, creatae a bar chart comparing the 20 most commmon words used throughout the episode and how often they occur. The title of this bar chart is "Twenty Most Common Words Spoken in SW EPisode V". Using matplotlib, the words (x-axis) and frequency (y-axis) will be plotted and can be easily analyzed. For better readability and organization, the x-axis is rotated 75 degrees and has a fontsize of 8. The labelpad is set to -4 so that the x-axis label is in view. The y-axis is set to a font size of 10 for a more organized look.
+Using the keys and values, creatae a bar chart comparing the 20 most commmon words used throughout the episode and how often they occur. Using matplotlib, the words (x-axis) and the frequency (y-axis) will be plotted and can be easily analyzed.
+- Title of bar chart: "Twenty Most Common Words Spoken in SW EPisode V"
+- Rotate x-axis 75 degrees (words) for better readability
+- Change x-axis font size to 8 for better readability
+- Set labelpad to -4 so that the x-axis label is in view
+- Change the y-axis font size to 10 for a more organized look
