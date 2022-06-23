@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 
 
-#download necessary files (downloaded most popular)
+#download necessary files from the Natural Language Toolkit (downloaded most popular)
 nltk.download()
 
 
@@ -36,7 +36,7 @@ arr = np.array(sw_dic)
 #create a list of all names
 name_column = [row['name'] for row in arr]
 
-#turn the list into a dictionary of how many lines each character has
+#convert the list into a dictionary and use Counter to count how many lines each character has
 name_freq = dict(Counter(name_column))
 print(name_freq)
 
@@ -64,11 +64,11 @@ top_three = top_char.most_common(3)
 top_three_dic = dict(top_three)
 print(top_three_dic)
 
-#only the dictionary keys (top 3 character names)
+#get only the dictionary keys (top 3 character names)
 top_three_keys = top_three_dic.keys()
 # print(top_three_keys)
 
-#only the dictionary values (how many lines each character has)
+#get only the dictionary values (how many lines each character has)
 top_three_values = top_three_dic.values()
 # print(top_three_values)
 
@@ -147,11 +147,11 @@ common_words = Count_no.most_common(20)
 common_words_dic = dict(common_words)
 print(common_words_dic)
 
-#only the dictionary keys (words)
+#get only the dictionary keys (words)
 most_freq_words_used = common_words_dic.keys()
 # print(most_freq_words_used)
 
-#only the dictionary values (how often the word occurs)
+#get only the dictionary values (how often the word occurs)
 most_freq_words_used_values = common_words_dic.values()
 # print(most_freq_words_used_values)
 
