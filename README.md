@@ -1,6 +1,6 @@
 # StarWarsScriptProject
 
-This is my CSIT505 Python project. I am using the Star Wars script from Episode V. I obtained this script from Kaggle.
+I am using the Star Wars script from Episode V. I obtained this script from Kaggle.
 
 Refer to the link: https://www.kaggle.com/datasets/xvivancos/star-wars-movie-scripts?select=SW_EpisodeV.txt
 
