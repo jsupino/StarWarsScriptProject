@@ -19,7 +19,7 @@ nltk.download('stopwords')
 
 #create a list: separated by each line: line number, character name, and dialogue
 sw_dic = []
-with open("C:/Users/supin/Desktop/starwars/SW_EpisodeV.txt", "r") as text:
+with open("SW_EpisodeV.txt", "r") as text:
     text = text.readlines()[1:]  #skip first line in file
     for line in text:
         line = line.lower().split('"') #lowercase all words and split by quotes
